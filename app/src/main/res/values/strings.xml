@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ReactiveRxTest</string>
+    <string name="error_invalid_email">Error: Email Invalid</string>
+    <string name="error_empty_input_password">Error: Password Field is Empty</string>
+    <string name="error_password_too_long">Error: Password too long</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
