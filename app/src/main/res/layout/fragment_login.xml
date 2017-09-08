@@ -1,13 +1,113 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_Login_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="uk.co.mali.reactiverxtest.login.fragment.LoginFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- LOGIN USER FORM-->
+
+    <RelativeLayout
+        android:id="@+id/container_login_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:gravity="center_horizontal">
+
+        <!-- HEADER -->
+        <TextView
+            style="@style/Label.CredentialHeader"
+            android:id="@+id/lbl_login_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/header_welcome"
+            android:layout_marginTop="16dp"
+            android:gravity="center"/>
+
+        <!-- EMAIL -->
+        <TextView
+            style="@style/Label.Sub"
+            android:id="@+id/lbl_login_email_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prompt_email"
+            android:layout_below="@+id/lbl_login_header"/>
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/InputField.Credential.Email"
+            android:id="@+id/txt_input_email_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lbl_login_email_sub">
+            <EditText
+                style="@style/InputField.Credential.Email"
+                android:id="@+id/edt_login_email"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_email"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- PASSWORDS -->
+        <TextView
+            style="@style/Label.Sub"
+            android:id="@+id/lbl_login_password_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prompt_password"
+            android:layout_below="@+id/txt_input_email_layout"/>
+        <android.support.design.widget.TextInputLayout
+            style="@style/InputField.Credential.Password"
+            android:id="@+id/txt_input_password_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lbl_login_password_sub">
+            <EditText
+                style="@style/InputField.Credential.Password"
+                android:id="@+id/edt_login_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_password"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="" />
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- LOGIN -->
+        <Button
+            style="@style/Button.Flat.Primary"
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="@string/action_signin"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/txt_input_password_layout"/>
+
+        <!-- REGISTER -->
+        <Button
+            style="@style/Button.Flat.Primary"
+
+            android:id="@+id/btn_create_account"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="@string/action_register"
+            android:layout_below="@+id/btn_login"
+            android:layout_centerHorizontal="true"
+
+            />
+
+
+    </RelativeLayout>
+
+    <!-- PROGRESS -->
+
+    <ProgressBar
+        android:id="@+id/progress_login_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible" />
 
 </FrameLayout>
